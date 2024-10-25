@@ -282,8 +282,14 @@ public class Module2 extends AppCompatActivity {
                     Intent i = new Intent(Module2.this, MainActivity.class);
                     startActivity(i);
                 }
+                //break;
+                if(x1>x2){
+                    Intent i = new Intent(Module2.this, Module3.class);
+                    startActivity(i);
+                }
                 break;
         }
         return false;
     }
+
 }

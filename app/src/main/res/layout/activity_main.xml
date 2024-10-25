@@ -313,7 +313,7 @@
         android:id="@+id/checkBoxRow6"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginStart="96dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="460dp"
         android:buttonTint="@android:color/holo_red_dark"
         app:layout_constraintStart_toStartOf="parent"
