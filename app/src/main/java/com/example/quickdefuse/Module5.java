@@ -428,7 +428,7 @@ public class Module5 extends AppCompatActivity {
                     startActivity(i);
                 }
                 if(x1>x2){
-                    Intent i = new Intent(Module5.this, Module5.class);
+                    Intent i = new Intent(Module5.this, Module6.class);
                     startActivity(i);
                 }
                 break;
