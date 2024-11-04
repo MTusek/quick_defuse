@@ -13,6 +13,18 @@
         android:theme="@style/Theme.QuickDefuse"
         tools:targetApi="31">
         <activity
+            android:name=".Module12"
+            android:exported="false" />
+        <activity
+            android:name=".Module11"
+            android:exported="false" />
+        <activity
+            android:name=".Module10"
+            android:exported="false" />
+        <activity
+            android:name=".Module9"
+            android:exported="false" />
+        <activity
             android:name=".Module8"
             android:exported="false" />
         <activity

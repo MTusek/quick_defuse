@@ -236,7 +236,6 @@ public class Module7 extends AppCompatActivity {
         }
     }
 
-
     public boolean onTouchEvent(MotionEvent touchevent){
         switch(touchevent.getAction()){
             case MotionEvent.ACTION_DOWN:
