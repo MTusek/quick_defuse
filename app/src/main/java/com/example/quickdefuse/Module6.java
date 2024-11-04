@@ -122,7 +122,7 @@ public class Module6 extends AppCompatActivity {
         numberPosition = findViewById(R.id.textNumber2);
         numberPositionNext = findViewById(R.id.nextNumber2);
         numberPositionPrevious = findViewById(R.id.previousNumber2);
-        nP = 1;
+        nP = 2;
 
         numberOption = findViewById(R.id.textNumber1);
         numberOptionNext = findViewById(R.id.nextNumber1);
@@ -133,6 +133,9 @@ public class Module6 extends AppCompatActivity {
         nextStep = findViewById(R.id.nextStep);
         currentStep = findViewById(R.id.textStep);
         nS = 1;
+
+        setNumberPosition();
+        setNumberValue();
     }
 
     private void setPreviousNumber() {
@@ -140,6 +143,8 @@ public class Module6 extends AppCompatActivity {
         if (n < 1)
             n = 4;
         number.setText("" + n);
+        setNumberValue();
+        setNumberPosition();
     }
 
     private void setNextNumber() {
@@ -147,35 +152,45 @@ public class Module6 extends AppCompatActivity {
         if (n > 4)
             n = 1;
         number.setText("" + n);
+        setNumberValue();
+        setNumberPosition();
     }
 
     private void setNextNumberOption() {
         nV++;
         if (nV > 4)
             nV = 1;
-        numberOption.setText("" + nV);
+        setNumberValue();
     }
 
     private void setPreviousNumberOption() {
         nV--;
         if (nV < 1)
             nV = 4;
-        numberOption.setText("" + nV);
+        setNumberValue();
     }
 
     private void setPreviousNumberPosition() {
         nP--;
         if (nP < 1)
             nP = 4;
-        numberPosition.setText("" + nP);
+        setNumberPosition();
     }
 
     private void setNextNumberPositon() {
         nP++;
         if (nP > 4)
             nP = 1;
-        numberPosition.setText("" + nP);
+        setNumberPosition();
     }
+    private void setNumberPosition(){
+        numberPosition.setText(""+nP);
+    }
+
+    private void setNumberValue(){
+        numberOption.setText("" + nV);
+    }
+
 
     private void setNextStep() {
         nS++;
@@ -208,15 +223,19 @@ public class Module6 extends AppCompatActivity {
             switch (n) {
                 case 1:
                     stepSolve.setText("Press button on position 2");
+                    nP=2;
                     break;
                 case 2:
                     stepSolve.setText("Press button on position 2");
+                    nP=2;
                     break;
                 case 3:
                     stepSolve.setText("Press button on position 3");
+                    nP=3;
                     break;
                 case 4:
                     stepSolve.setText("Press button on position 4");
+                    nP=4;
                     break;
             }
         }
@@ -224,12 +243,14 @@ public class Module6 extends AppCompatActivity {
             switch (n) {
                 case 1:
                     stepSolve.setText("Press button number 4");
+                    nV=4;
                     break;
                 case 2:
                     stepSolve.setText("Press button on position P1");
                     break;
                 case 3:
                     stepSolve.setText("Press button on position 1");
+                    nP=1;
                     break;
                 case 4:
                     stepSolve.setText("Press button on position P1");
@@ -247,9 +268,11 @@ public class Module6 extends AppCompatActivity {
                     break;
                 case 3:
                     stepSolve.setText("Press button on position 3");
+                    nP=3;
                     break;
                 case 4:
                     stepSolve.setText("Press button number 4");
+                    nV=4;
                     break;
             }
         }
@@ -261,6 +284,7 @@ public class Module6 extends AppCompatActivity {
                     break;
                 case 2:
                     stepSolve.setText("Press button on position 1");
+                    nP=1;
                     break;
                 case 3:
                     stepSolve.setText("Press button on position P2");
@@ -292,6 +316,8 @@ public class Module6 extends AppCompatActivity {
     }
     private void setDescription() {
         info.setText("Button number " + nV + " is on position " + nP);
+        setNumberValue();
+        setNumberPosition();
        storeToMemory();
     }
     private void storeToMemory() {
@@ -320,21 +346,27 @@ public class Module6 extends AppCompatActivity {
     private void updateInstructions(){
         if(stepSolve.getText().equals("Press button on position P1")){
             stepSolve.setText("Press button on position "+positions[1]);
+            nP=positions[1];
         }
         if(stepSolve.getText().equals("Press button on position P2")){
             stepSolve.setText("Press button on position "+positions[2]);
+            nP=positions[2];
         }
         if(stepSolve.getText().equals("Press button number N1")){
             stepSolve.setText("Press button number "+values[1]);
+            nV=values[1];
         }
         if(stepSolve.getText().equals("Press button number N2")){
             stepSolve.setText("Press button number "+values[2]);
+            nV=values[2];
         }
         if(stepSolve.getText().equals("Press button number N3")){
             stepSolve.setText("Press button number "+values[3]);
+            nV=values[3];
         }
         if(stepSolve.getText().equals("Press button number N4")){
             stepSolve.setText("Press button number "+values[4]);
+            nV=values[4];
         }
     }
     public boolean onTouchEvent(MotionEvent touchevent){

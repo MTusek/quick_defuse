@@ -147,7 +147,7 @@ public class Module8 extends AppCompatActivity {
             solution.setText("Cut the wire");
         }
         //B - Cut if last number on SN is even
-        if(wireCounter==0 &&!(star.isChecked() || led.isChecked())){
+        if((wireCounter==0 || wireCounter==5) &&!(star.isChecked() || led.isChecked())){
             solution.setText("Cut the wire if the last digit of serial# is even");
         }
         //BR - Cut if last number on SN is even
@@ -155,11 +155,11 @@ public class Module8 extends AppCompatActivity {
             solution.setText("Cut the wire if the last digit of serial# is even");
         }
         //BS - Do NOT Cut
-        if(wireCounter==0 && star.isChecked() && !(led.isChecked())){
+        if((wireCounter==0 || wireCounter==5) && star.isChecked() && !(led.isChecked())){
             solution.setText("Don't cut the wire");
         }
         //BL - Cut if there is a Parallel Port
-        if(wireCounter==0 && led.isChecked() && !(star.isChecked())){
+        if((wireCounter==0 || wireCounter==5) && led.isChecked() && !(star.isChecked())){
             solution.setText("Cut the wire if the bomb has a parallel port");
         }
         //BRS - Cut if there is a Parallel Port
@@ -171,7 +171,7 @@ public class Module8 extends AppCompatActivity {
             solution.setText("Cut the wire if the last digit of serial# is even");
         }
         //BSL - Cut if there is a Parallel Port
-        if(wireCounter==0 && star.isChecked() && led.isChecked()){
+        if((wireCounter==0 || wireCounter==5) && star.isChecked() && led.isChecked()){
             solution.setText("Cut the wire if the bomb has a parallel port");
         }
         //BRSL - Do NOT Cut
@@ -179,19 +179,19 @@ public class Module8 extends AppCompatActivity {
             solution.setText("Don't cut the wire");
         }
         //R - Cut if last number on SN is even
-        if(wireCounter==1 && !(star.isChecked()) && !(led.isChecked())) {
+        if((wireCounter==1 || wireCounter==4) && !(star.isChecked()) && !(led.isChecked())) {
             solution.setText("Cut the wire if the last digit of serial# is even");
         }
         //RS - Cut it
-        if(wireCounter==1 && star.isChecked() && !(led.isChecked())) {
+        if((wireCounter==1 || wireCounter==4) && star.isChecked() && !(led.isChecked())) {
             solution.setText("Cut the wire");
         }
         //RL - Cut if there is 2+ batteries
-        if(wireCounter==1 && !(star.isChecked()) && (led.isChecked())) {
+        if((wireCounter==1 || wireCounter==4) && !(star.isChecked()) && (led.isChecked())) {
             solution.setText("Cut the wire if there is 2+ batteries");
         }
         //RSL - Cut if there is 2+ batteries
-        if(wireCounter==1 && star.isChecked() && led.isChecked()){
+        if((wireCounter==1 || wireCounter == 4) && star.isChecked() && led.isChecked()){
             solution.setText("Cut the wire if there is 2+ batteries");
         }
         //S - Cut it
